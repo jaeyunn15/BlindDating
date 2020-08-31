@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BlindDating</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_signout">Sign Out</string>
+    <string name="msg_hint">Message here..</string>
+</resources>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1019331194594",
+    "firebase_url": "https://blinddating-40c63.firebaseio.com",
+    "project_id": "blinddating-40c63",
+    "storage_bucket": "blinddating-40c63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019331194594:android:8fed5c998d3084b40838bb",
+        "android_client_info": {
+          "package_name": "com.project.blinddating"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019331194594-9e2fc9pq474ctrjh4gj86e1mj5ogvhs5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.project.blinddating",
+            "certificate_hash": "139d312e7fa6ab875d138a55849bf1cfdb88a838"
+          }
+        },
+        {
+          "client_id": "1019331194594-ed6kg0b4pqdnsfgep40jbgtp8amna7pf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVDcDnTl2WbqWColwMThLAMaEOT_9IVVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019331194594-ed6kg0b4pqdnsfgep40jbgtp8amna7pf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
