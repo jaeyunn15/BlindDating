@@ -27,7 +27,7 @@ abstract class BaseViewModel<S:ViewState> (
 
     open fun goToLogin(){
         viewState.newActivity = LoginActivity::class
-        //viewState.clearActivityOnIntent = true
+        viewState.clearActivityOnIntent = true
         updateUi()
     }
 

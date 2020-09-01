@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#38ea"
+    android:background="#e2e2e2"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,7 +34,7 @@
             android:paddingStart="32dp"
             android:paddingEnd="32dp"
             android:text="Enter"
-            android:background="#38ea"
+            android:background="#e2e2e2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edittext_roomid"
@@ -45,12 +45,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:textColor="@android:color/holo_red_dark"
+            android:textColor="@android:color/holo_green_light"
             tools:text="Please enter a room ID"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/button_enter" />
 
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGOUT"
+        android:background="#e2e2e2"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="30dp"
+        />
 </FrameLayout>

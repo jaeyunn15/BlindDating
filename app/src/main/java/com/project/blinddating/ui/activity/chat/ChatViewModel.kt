@@ -4,6 +4,7 @@ import com.project.blinddating.di.scope.AppScoped
 import com.project.blinddating.helper.FirebaseHelper
 import com.project.blinddating.ui.activity.base.BaseViewModel
 import com.project.blinddating.ui.activity.login.LoginActivity
+import com.project.blinddating.ui.activity.waiting.WaitingActivity
 import javax.inject.Inject
 
 
@@ -16,7 +17,6 @@ class ChatViewModel @Inject constructor(
     init {
         viewState.firebaseUser = firebaseHelper.user()
     }
-
 
     fun setRoomId(roomId: String) {
         firebaseHelper.chatId = roomId

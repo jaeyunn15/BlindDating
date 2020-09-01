@@ -7,6 +7,7 @@ import com.project.blinddating.di.scope.AppScoped
 import com.project.blinddating.ui.activity.ViewModelFactory
 import com.project.blinddating.ui.activity.chat.ChatViewModel
 import com.project.blinddating.ui.activity.login.LoginViewModel
+import com.project.blinddating.ui.activity.profile.ProfileViewModel
 import com.project.blinddating.ui.activity.register.RegisterViewModel
 import com.project.blinddating.ui.activity.waiting.WaitingViewModel
 import dagger.Binds
@@ -29,6 +30,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(RegisterViewModel::class)
     abstract fun bindRegisterViewModel(viewModel: RegisterViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ProfileViewModel::class)
+    abstract fun bindProfileViewModel(viewModel: ProfileViewModel): ViewModel
 
     @Binds
     @IntoMap

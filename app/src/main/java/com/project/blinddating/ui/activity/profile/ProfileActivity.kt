@@ -1,38 +1,30 @@
-package com.project.blinddating.ui.activity.chat
+package com.project.blinddating.ui.activity.profile
 
 import android.os.Bundle
-import android.util.Log
 import com.project.blinddating.R
+import com.project.blinddating.ui.activity.register.RegisterFragment
 import com.project.blinddating.util.ActivityUtils
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
-
-class ChatActivity : DaggerAppCompatActivity() {
+class ProfileActivity : DaggerAppCompatActivity() {
 
     @Inject
-    lateinit var chatFragment: ChatFragment
+    lateinit var profileFragment: ProfileFragment
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
 
-        Log.d("onCreate","passed onCreate")
-
         var fragment = supportFragmentManager.findFragmentById(R.id.contentFrame)
-
-        if (fragment == null) {
-            fragment = chatFragment
+        if (fragment == null){
+            fragment = profileFragment
             ActivityUtils.addFragmentToActivity(
                 supportFragmentManager,
                 fragment,
                 R.id.contentFrame
             )
         }
-    }
-
-    override fun onBackPressed() {
-        chatFragment.saveRoomIdToPreferences(null)
-        super.onBackPressed()
     }
 }

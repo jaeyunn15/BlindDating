@@ -19,7 +19,7 @@
         android:paddingStart="24dp"
         tools:text="This is a sent message keep the text going so we can see"
         android:background="@drawable/shape_bubble_sent"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:maxWidth="256dp" />
 
     <TextView

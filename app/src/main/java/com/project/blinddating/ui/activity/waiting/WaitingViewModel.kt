@@ -16,7 +16,6 @@ class WaitingViewModel @Inject constructor(
 ): BaseViewModel<WaitingViewState>(firebaseHelper, viewState) {
 
     fun handleEnterButton(roomId: String) {
-
         if (!validate(roomId)) {
             updateUi()
             return
@@ -34,6 +33,7 @@ class WaitingViewModel @Inject constructor(
 
         networkScope.launch(errorHandler) {
             firebaseHelper.addUserToChat(roomId)
+            firebaseHelper.addFirebase(roomId)
             launchRoomActivity(roomId)
         }
 

@@ -5,13 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import javax.inject.Inject
 import kotlin.reflect.KClass
 
-abstract class BaseFragment <V:BaseViewModel<S>, S : ViewState>(open var viewModel : V) : Fragment(){
+abstract class BaseFragment <V:BaseViewModel<S>, S : ViewState>(open var viewModel : V) : Fragment() {
 
     @Inject
     lateinit var viewModelFactory : ViewModelProvider.Factory
@@ -54,6 +55,8 @@ abstract class BaseFragment <V:BaseViewModel<S>, S : ViewState>(open var viewMod
         super.onPause()
         onUnbindViewModel()
     }
+
+
 
     private fun observeState() {
         viewModel.getState().observe(this, Observer {state ->

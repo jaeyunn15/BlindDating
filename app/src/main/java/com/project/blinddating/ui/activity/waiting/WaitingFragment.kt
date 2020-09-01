@@ -26,7 +26,7 @@ class WaitingFragment @Inject constructor(
 
     override fun onBindViewModel() {
         super.onBindViewModel()
-        checkRoomIdPreference()
+        //checkRoomIdPreference()
         viewModel.chkListData()
     }
 
@@ -54,6 +54,9 @@ class WaitingFragment @Inject constructor(
     override fun attachClickListeners() {
         button_enter.setOnClickListener {
             viewModel.handleEnterButton(edittext_roomid.text.toString())
+        }
+        btn_logout.setOnClickListener {
+            viewModel.handleSignOut()
         }
     }
 

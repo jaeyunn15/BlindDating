@@ -3,6 +3,8 @@ package com.project.blinddating.ui.activity.chat
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -15,11 +17,14 @@ import com.project.blinddating.ui.activity.base.BaseFragment
 import com.project.blinddating.ui.activity.login.LoginActivity
 import com.project.blinddating.ui.activity.waiting.WaitingActivity
 import com.project.blinddating.util.AppConstants
+import com.project.blinddating.util.OnBackPressedListener
 import kotlinx.android.synthetic.main.fragment_chat.*
+import kotlinx.android.synthetic.main.view_toolbar_chat.*
 import javax.inject.Inject
 
 @ActivityScoped
-class ChatFragment  @Inject constructor(override var viewModel: ChatViewModel): BaseFragment<ChatViewModel, ChatViewState>(viewModel) {
+class ChatFragment @Inject constructor(override var viewModel: ChatViewModel)
+    : BaseFragment<ChatViewModel, ChatViewState>(viewModel){
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -28,12 +33,14 @@ class ChatFragment  @Inject constructor(override var viewModel: ChatViewModel): 
         activity?.intent?.extras?.let {
             val roomId = it[AppConstants.INTENT_EXTRA_ROOMID] as String
             viewModel.setRoomId(roomId)
-            saveRoomIdToPreferences(roomId)
+            //saveRoomIdToPreferences(roomId)
             Log.d("룸아디","$roomId")
         } ?: run {
             WaitingActivity::class.start(true)
         }
     }
+
+
 
     override fun getLayoutResourceFile(): Int {
         return R.layout.fragment_chat
@@ -63,11 +70,15 @@ class ChatFragment  @Inject constructor(override var viewModel: ChatViewModel): 
         button_send.setOnClickListener {
             viewModel.handleSendButton(edittext_chat.text.toString())
         }
+        btn_back.setOnClickListener {
+            WaitingActivity::class.start(true)
+        }
     }
+
+
 
     fun saveRoomIdToPreferences(roomId: String?) {
         val preferences = PreferenceManager.getDefaultSharedPreferences(activity)
-
         preferences.edit()
             .putString(AppConstants.PREFERENCE_ROOMID, roomId)
             .apply()
@@ -90,4 +101,6 @@ class ChatFragment  @Inject constructor(override var viewModel: ChatViewModel): 
 
         }
     }
+
+
 }

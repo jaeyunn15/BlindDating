@@ -13,7 +13,8 @@ import kotlinx.android.synthetic.main.fragment_register.*
 import javax.inject.Inject
 
 @ActivityScoped
-class RegisterFragment @Inject constructor(override var viewModel: RegisterViewModel) : BaseFragment<RegisterViewModel, RegisterViewState>(viewModel){
+class RegisterFragment @Inject constructor(override var viewModel: RegisterViewModel)
+    : BaseFragment<RegisterViewModel, RegisterViewState>(viewModel){
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -44,7 +45,4 @@ class RegisterFragment @Inject constructor(override var viewModel: RegisterViewM
             viewModel.handleLoginTextviewClicked()
         }
     }
-
-
-
 }

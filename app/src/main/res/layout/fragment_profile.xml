@@ -14,75 +14,89 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/register_logo"
+            android:id="@+id/profile_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:fontFamily="sans-serif"
-            android:text="Blind Dating"
+            android:text="More Profile"
             android:textSize="35sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             />
 
         <EditText
-            android:id="@+id/edittext_email"
+            android:id="@+id/edittext_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="email"
+            android:hint="id"
             android:layout_marginTop="20dp"
-            android:inputType="textEmailAddress"
+            android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_logo"/>
+            app:layout_constraintTop_toBottomOf="@id/profile_logo"/>
+
 
         <EditText
-            android:id="@+id/edittext_password"
+            android:id="@+id/edittext_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:hint="Password"
-            android:inputType="textPassword"
+            android:hint="name"
+            android:layout_marginTop="20dp"
+            android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edittext_email" />
+            app:layout_constraintTop_toBottomOf="@id/edittext_id"
+            />
 
         <EditText
-            android:id="@+id/edittext_confirm_password"
+            android:id="@+id/edittext_gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:hint="Confirm Password"
-            android:inputType="textPassword"
+            android:hint="gender"
+            android:layout_marginTop="20dp"
+            android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edittext_password" />
+            app:layout_constraintTop_toBottomOf="@id/edittext_name" />
+
+        <EditText
+            android:id="@+id/edittext_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="age"
+            android:inputType="text"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edittext_gender" />
+
+        <EditText
+            android:id="@+id/edittext_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="address"
+            android:inputType="text"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edittext_age" />
 
         <Button
-            android:id="@+id/button_register"
+            android:id="@+id/button_join"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:paddingStart="48dp"
             android:paddingEnd="48dp"
             android:background="#38ea"
-            android:text="Register"
+            android:text="Join"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edittext_confirm_password" />
+            app:layout_constraintTop_toBottomOf="@id/edittext_address" />
 
         <TextView
-            android:id="@+id/textview_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Already have an account? Log in here"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_register" />
-
-        <TextView
-            android:id="@+id/textview_error_register"
+            android:id="@+id/textview_error_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -90,7 +104,7 @@
             tools:text="Please check all the fields"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textview_login" />
+            app:layout_constraintTop_toBottomOf="@id/button_join" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

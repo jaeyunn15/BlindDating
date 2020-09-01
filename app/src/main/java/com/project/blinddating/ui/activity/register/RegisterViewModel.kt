@@ -1,9 +1,12 @@
 package com.project.blinddating.ui.activity.register
 
+import android.util.Log
 import com.project.blinddating.helper.FirebaseHelper
 import com.project.blinddating.ui.activity.base.BaseViewModel
 import com.project.blinddating.ui.activity.login.LoginActivity
+import com.project.blinddating.ui.activity.profile.ProfileActivity
 import com.project.blinddating.ui.activity.waiting.WaitingActivity
+import com.project.blinddating.util.AppConstants
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 import java.util.regex.Pattern
@@ -49,8 +52,10 @@ class RegisterViewModel @Inject constructor(
 
         networkScope.launch(errorHandler) {
             firebaseHelper.register(username, password)
-            viewState.newActivity = WaitingActivity::class
+            viewState.newActivity = ProfileActivity::class
             viewState.clearActivityOnIntent = true
+            viewState.intentExtras.putString(AppConstants.REGISTER_USEREMAIL, username)
+            viewState.intentExtras.putString(AppConstants.REGISTER_USERPASSWORD, password)
             updateUi()
         }
     }

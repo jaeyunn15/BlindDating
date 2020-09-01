@@ -4,15 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="16dp"
     android:animateLayoutChanges="true"
-    android:paddingBottom="16dp"
-    android:background="#38ea"
+    android:background="#e2e2e2"
     >
+
+    <include
+        android:id="@+id/tb_chat"
+        layout="@layout/view_toolbar_chat"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_chat"
         android:layout_width="match_parent"
+        android:paddingTop="5dp"
         android:layout_height="0dp"
         android:layout_weight="1" />
 
@@ -35,11 +39,11 @@
 
         <ImageView
             android:id="@+id/button_send"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginStart="16dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_baseline_send_24" />
+            android:src="@drawable/ic_baseline_arrow_upward_24" />
 
     </LinearLayout>
 

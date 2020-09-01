@@ -9,6 +9,8 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.project.blinddating.entity.ChatMsg
+import com.project.blinddating.entity.Example
+import com.project.blinddating.entity.User
 import kotlinx.coroutines.tasks.await
 import java.util.*
 
@@ -30,6 +32,21 @@ class FirebaseHelper {
         return auth.createUserWithEmailAndPassword(email, password).await()
     }
 
+    suspend fun addProfile(user : User) : DocumentReference{
+        return firestore.collection("User")
+            .document(user.user_age)
+            .collection("profile")
+            .add(mapOf(
+                Pair("id", user.user_id),
+                Pair("name", user.user_name),
+                Pair("gender", user.user_gender),
+                Pair("age", user.user_age),
+                Pair("address", user.user_address),
+                Pair("email", user.user_id),
+            ))
+            .await()
+    }
+
     suspend fun addUserToChat(chatId : String) : DocumentReference {
         return firestore.collection("chats")
             .document(chatId)
@@ -41,6 +58,18 @@ class FirebaseHelper {
             ))
             .await()
     }
+
+    suspend fun addFirebase(chatId: String) : DocumentReference {
+        return firestore.collection("chatList")
+            .document("chatRoom")
+            .collection(chatId)
+            .add(mapOf(
+                Pair("roomId", chatId),
+                Pair("email", user()?.email)
+            ))
+            .await()
+    }
+
 
     fun sendChatMsg(msg: String) {
         firestore.collection("chats")
@@ -83,16 +112,17 @@ class FirebaseHelper {
                     error.printStackTrace()
                     return@addSnapshotListener
                 }
-                val msg = value?.documents?.map {
-                    //it.data
-                    Log.d("success ","${it.data}")
 
+                val ex = value?.documents?.map {
+                    Example(
+                        it["num"] as String
+                    )
                 }
-                msg.let {
+                ex.let {
                     Log.d("성공 ", "$it")
                 }
 
+
             }
     }
-
 }

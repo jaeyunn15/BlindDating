@@ -5,6 +5,8 @@ import com.project.blinddating.ui.activity.chat.ChatActivity
 import com.project.blinddating.ui.activity.chat.ChatModule
 import com.project.blinddating.ui.activity.login.LoginActivity
 import com.project.blinddating.ui.activity.login.LoginModule
+import com.project.blinddating.ui.activity.profile.ProfileActivity
+import com.project.blinddating.ui.activity.profile.ProfileModule
 import com.project.blinddating.ui.activity.register.RegisterActivity
 import com.project.blinddating.ui.activity.register.RegisterModule
 import com.project.blinddating.ui.activity.waiting.WaitingActivity
@@ -22,6 +24,10 @@ abstract class ActivityBindingModule {
     @ActivityScoped
     @ContributesAndroidInjector(modules = [RegisterModule::class])
     internal abstract fun registerActivity(): RegisterActivity
+
+    @ActivityScoped
+    @ContributesAndroidInjector(modules = [ProfileModule::class])
+    internal abstract fun profileActivity(): ProfileActivity
 
     @ActivityScoped
     @ContributesAndroidInjector(modules = [WaitingModule::class])
